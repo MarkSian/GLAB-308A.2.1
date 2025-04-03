@@ -20,12 +20,21 @@ const adventurer = {
         companion: {
             name: "Frank",
             type: "Flea",
-        }
+        },
+
+    },
+    roll(mod = 0) {
+        const result = Math.floor(Math.random() * 20) + 1 + mod;
+        console.log(`${this.name} rolled a ${result}.`)
     }
-}
+};
+
+adventurer.roll();
+// the parameter mod is default to 0. Changing that will add to the number rolled.
+adventurer.roll(5);
+// I know this adds as I can get a roll outside of the 1-20 range.
 
 for (let i = 0; i < adventurer.inventory.length; i++) {
     console.log(adventurer.inventory[i]);
 }
 
-for (let c)
