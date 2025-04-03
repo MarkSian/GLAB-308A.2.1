@@ -61,9 +61,14 @@ robin.companion.companion.type = "Flea";
 robin.companion.companion.inventory = ["small hat", "sunglasses"];
 
 //the whole party rolls
+console.log("----The party rolls for initiative or something-----");
 robin.roll();
 robin.companion.roll();
 robin.companion.companion.roll();
 
+console.log("----The party's inventory-----");
 console.log(`The party's current inventory is Robins's ${robin.inventory} and Frank's ${robin.companion.companion.inventory}`);
 console.log(`The party's current inventory is Robin's: ${robin.inventory.join(", ")} and Frank's: ${robin.companion.companion.inventory.join(", ")}.`);
+
+//Part 3 Class Features3
+
