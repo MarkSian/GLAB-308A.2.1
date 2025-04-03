@@ -71,4 +71,26 @@ console.log(`The party's current inventory is Robins's ${robin.inventory} and Fr
 console.log(`The party's current inventory is Robin's: ${robin.inventory.join(", ")} and Frank's: ${robin.companion.companion.inventory.join(", ")}.`);
 
 //Part 3 Class Features3
-
+class Adventurer extends Character {
+    constructor(name, role) {
+        super(name); // the super() method calls the constructor of the parent class (Character).
+        // Adventurers have specialized roles.
+        this.role = role;
+        this.level = 1; // Adventurers start at level 1.
+        this.experience = 0; // Adventurers start with 0 experience points.
+        this.equipment = {
+            weapon: "short sword",
+            armor: "leather armor"
+        }; // Adventurers start with a short sword and leather armor.
+        this.skills = ["stab", "dodge"]; // Adventurers start with basic skills.
+        // Every adventurer starts with a bed and 50 gold coins.
+        this.inventory.push("bedroll", "50 gold coins"); // inventory is an array, so we can use the push method to add the bedroll and gold.
+    }
+    // Adventurers have the ability to scout ahead of them.
+    // this scout method will log a message that calls the roll method from the parent class and gives us a dice roll.
+    // this method will be available to all adventurers.
+    scout() {
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
+    }
+}
